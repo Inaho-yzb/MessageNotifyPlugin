@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/message.js"></script>
+    <link rel="stylesheet" href="css/message.css">
+
+    <script>
+        $(function(){
+            MessagePlugin.init(
+                {
+                elem: "#message",
+                msgData: [{text: "111sdgasgdasgasgasdgasdgasdg", id: 1, readStatus: 1},
+                    {text: "dfdsfsfd", id: 2, readStatus: 0},
+                    {text: "rrtrt", id: 3, readStatus: 0},
+                    {text: "gfdhdhf", id: 4, readStatus: 0},
+                    {text: "hghgj", id: 5, readStatus: 0},
+                    {text: "rerer", id: 6, readStatus: 0},],
+                    msgUnReadData: 99,
+                    noticeUnReadData: 99,
+                    msgClick: function(obj) {
+                        alert("消息点击事件");
+                    },
+                    noticeClick: function(obj) {
+                        alert("提醒点击事件");
+                    },
+                    allRead: function(obj) {
+                        alert("全部已读");
+                    },
+                    getNodeHtml: function(obj, node) {
+                        if (obj.readStatus == 1) {
+                            node.isRead = true;
+                        } else {
+                            node.isRead = false;
+                        }
+                        var html = "<p>"+ obj.text +"</p>";
+
+                        node.html = html;
+
+                        return node;
+                    }
+            }
+            );
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div id="message"></div>
+</body>
+
+</html>
