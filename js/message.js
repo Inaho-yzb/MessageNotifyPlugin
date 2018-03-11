@@ -1,22 +1,19 @@
 ;(function () {
     var option = {
         title: "消息通知", //标题
-        page: true, //分页
         width: 250,
-        msgData: [], //数据
-        noticeData: [],
+        msgData: [], //消息数据
+        noticeData: [], //提醒数据
         msgUnReadData: 0, //消息未读数
         noticeUnReadData: 0, //提醒未读数
         elem: "body",
         allRead: null, //全部已读点击事件
-        msgItemTemplate: null, //
-        msgClick: null,
-        noticeClick: null,
-        msgShow: 5,
-        noticeShow: 5,
+        msgClick: null, //消息点击回调事件
+        noticeClick: null, //提醒点击回调事件
+        msgShow: 5, //消息展示条数
+        noticeShow: 5, //提醒展示条数
         height: 350,
-        loadMore: null,
-        getNodeHtml: null
+        getNodeHtml: null //消息提醒自定义显示html
     };
 
     var api = {
