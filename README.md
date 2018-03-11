@@ -4,7 +4,12 @@ A jQuery message notify plugin
 
 使用方法：
 
-1.设置容器元素
+1.设置容器元素，引入js， css
+```html
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/message.js"></script>
+<link rel="stylesheet" href="css/message.css">
+```
 ```html
 <body>
     <div id="message"></div>
